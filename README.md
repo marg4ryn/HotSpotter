@@ -39,10 +39,22 @@ To run the tests:
 npm run test
 ```
 
-To run tests with the Vitest UI:
+Run tests in watch mode (re-runs on file changes):
 
 ```bash
-npx vitest --ui
+npm run test:watch
+```
+
+Run tests and generate coverage report:
+
+```bash
+npm run test:coverage
+```
+
+Run tests with the Vitest interactive UI:
+
+```bash
+npm run test:ui
 ```
 
 ## Code Quality
@@ -74,4 +86,3 @@ Here's an overview of the project's directory structure:
 -   **`stores/`**: Pinia modules for global state management.
 -   **`utils/`**: General utility functions (e.g., date formatting, form validation).
 -   **`views/`**: Components representing entire pages/views of the application.
-```
