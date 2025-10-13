@@ -1,0 +1,24 @@
+$font-family-base: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+$border-radius: 8px;
+
+$theme-dark: (
+  color-text: #ffffff,
+
+  color-bg-primary: #0d1117,
+  color-bg-secondary: #08040c,
+
+  color-primary: #28abf2,
+  color-primary-hover: #1c73a1,
+
+  color-button-primary: #2e9a40,
+  color-button-primary-hover: #1f692b,
+
+  color-button-secondary: #3d444d,
+  color-button-secondary-hover: #30353b,
+
+  color-button-danger: #ff5f57,
+  color-button-danger-hover: #aa302a,
+);
+
+$theme-light: ();
