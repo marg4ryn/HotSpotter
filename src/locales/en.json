@@ -1,4 +1,9 @@
 {
+  "appname": "HotSpotter",
+
+  "footer.about": "About",
+  "footer.attributes": "Attributes",
+
   "navbar.summary": "Summary",
   "navbar.code-health": "Code Health",
   "navbar.change-coupling": "Change Coupling",

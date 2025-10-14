@@ -1,5 +1,5 @@
 <template>
-  <MeshGradient color1="#ff6b6b" color2="#4dabf7" />
+  <MeshGradient color1="#0d1117" color2="#28abf2" />
 </template>
 
 <script setup lang="ts">

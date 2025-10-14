@@ -4,7 +4,7 @@ import { i18n } from './i18n'
 import App from './App.vue'
 import router from './router/index'
 
-import '@/assets/styles/main.scss'
+import '@/styles/main.scss'
 
 const app = createApp(App)
 

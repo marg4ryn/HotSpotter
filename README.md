@@ -75,14 +75,12 @@ npm run lint
 
 Here's an overview of the project's directory structure:
 
--   **`assets/`**: Contains static assets.
-    -   `images/`: Graphics, icons.
-    -   `styles/`: SCSS files.
 -   **`components/`**: Reusable Vue components.
     -   `common/`: Very general components like buttons, input fields, modals.
     -   `layout/`: Components responsible for the overall page layout (e.g., header, footer, sidebar navigation).
+-   **`locales/`**: Stores translation files for different languages.
 -   **`router/`**: Vue Router configuration.
+-   **`styles/`**: SCSS files.
 -   **`services/`**: Files containing business logic and communication with external APIs.
 -   **`stores/`**: Pinia modules for global state management.
--   **`utils/`**: General utility functions (e.g., date formatting, form validation).
 -   **`views/`**: Components representing entire pages/views of the application.
