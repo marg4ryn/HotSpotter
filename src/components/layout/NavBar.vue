@@ -13,13 +13,15 @@
 
 <script setup lang="ts">
   import NavBarItem from '../common/NavBarItem.vue'
+  import { useI18n } from 'vue-i18n'
+  const { t } = useI18n()
 
   const items = [
-    { label: 'Summary', icon: '/icons/loupe.png', to: '/' },
-    { label: 'Code Health', icon: '/icons/cardiogram.png', to: '/code-health' },
-    { label: 'Change Coupling', icon: '/icons/coupling.png', to: '/change-coupling' },
-    { label: 'Developers', icon: '/icons/group.png', to: '/developers' },
-    { label: 'Mappings', icon: '/icons/mapping.png', to: '/mappings' },
+    { label: t('navbar.summary'), icon: '/icons/loupe.png', to: '/' },
+    { label: t('navbar.code-health'), icon: '/icons/cardiogram.png', to: '/code-health' },
+    { label: t('navbar.change-coupling'), icon: '/icons/coupling.png', to: '/change-coupling' },
+    { label: t('navbar.developers'), icon: '/icons/group.png', to: '/developers' },
+    { label: t('navbar.mappings'), icon: '/icons/mapping.png', to: '/mappings' },
   ]
 </script>
 
