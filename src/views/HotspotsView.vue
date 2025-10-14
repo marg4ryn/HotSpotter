@@ -1,7 +1,14 @@
-<script setup lang="ts"></script>
-
 <template>
-  <div class="content"></div>
+  <MeshGradient color1="#ff6b6b" color2="#4dabf7" />
 </template>
 
-<style lang="scss" scoped></style>
+<script setup lang="ts">
+  import MeshGradient from '@/components/common/MeshGradient.vue'
+</script>
+
+<style scoped>
+  :deep(.mesh-gradient) {
+    border-radius: 20px;
+    height: 400px;
+  }
+</style>

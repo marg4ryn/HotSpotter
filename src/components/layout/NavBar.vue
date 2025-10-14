@@ -16,10 +16,10 @@
 
   const items = [
     { label: 'Summary', icon: '/icons/loupe.png', to: '/' },
-    { label: 'Code Health', icon: '/icons/cardiogram.png', to: '/a' },
-    { label: 'Change Coupling', icon: '/icons/coupling.png', to: '/a' },
-    { label: 'Developers', icon: '/icons/group.png', to: '/a' },
-    { label: 'Mappings', icon: '/icons/mapping.png', to: '/a' },
+    { label: 'Code Health', icon: '/icons/cardiogram.png', to: '/code-health' },
+    { label: 'Change Coupling', icon: '/icons/coupling.png', to: '/change-coupling' },
+    { label: 'Developers', icon: '/icons/group.png', to: '/developers' },
+    { label: 'Mappings', icon: '/icons/mapping.png', to: '/mappings' },
   ]
 </script>
 
