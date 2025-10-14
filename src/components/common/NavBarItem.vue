@@ -16,51 +16,51 @@
 
 <style lang="scss" scoped>
   .nav-item {
-    display: flex;
-    align-items: center;
+    @include flex-center;
     gap: 10px;
-    padding: 10px 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
     cursor: pointer;
     transition:
       background-color 0.3s ease,
-      color 0.3s ease;
+      font-weight 0.3s ease;
     position: relative;
-    color: var(--color-text);
+    color: var(--color-on-bg-primary);
     text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    min-width: 200px;
+    max-width: 250px;
 
     &:hover {
-      background-color: var(--color-bg-secondary);
-      color: var(--color-primary);
+      background: linear-gradient(
+        to right,
+        color-mix(in srgb, var(--color-primary) 50%, transparent) 0%,
+        transparent 30%,
+        transparent 70%,
+        color-mix(in srgb, var(--color-primary) 50%, transparent) 100%
+      );
+      font-weight: 600;
     }
 
     &__icon {
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       object-fit: contain;
-      transition: transform 0.2s ease-in-out;
-    }
-
-    &__text {
-      font-size: 16px;
-      font-weight: 500;
     }
 
     &--active {
-      color: var(--color-primary);
+      font-weight: 600;
 
       &::after {
         content: '';
         position: absolute;
         bottom: 0;
-        left: 0;
-        width: 100%;
+        left: 6px;
+        width: 94%;
         height: 3px;
         background-color: var(--color-primary);
         border-radius: 2px;
-      }
-
-      .nav-item__icon {
-        transform: scale(1.1);
       }
     }
   }

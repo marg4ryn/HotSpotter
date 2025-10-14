@@ -3,8 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: var(--color-text);
-  background-color: var(--color-bg-primary);
+  color: var(--color-on-bg-secondary);
+  background-color: var(--color-bg-secondary);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,41 +24,6 @@ body,
   width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.content {
-  flex: 1;
-  overflow: auto;
-  background-color: var(--color-bg-primary);
-  padding: 20px;
-}
-
-a {
-  font-weight: 500;
-  color: var(--color-primary);
-  text-decoration: none;
-
-  &:hover {
-    color: var(--color-primary-hover);
-  }
-}
-
-button {
-  border-radius: $border-radius;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  @include transition;
-
-  &:hover {
-    border-color: var(--color-primary);
-  }
-
-  &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
 }
 
 :root {

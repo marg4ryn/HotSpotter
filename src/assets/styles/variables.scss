@@ -3,10 +3,17 @@ $font-family-base: system-ui, Avenir, Helvetica, Arial, sans-serif;
 $border-radius: 8px;
 
 $theme-dark: (
-  color-text: #ffffff,
+  color-bg-primary: #08040c,
+  color-bg-primary-hover: #0b0e13,
 
-  color-bg-primary: #0d1117,
-  color-bg-secondary: #08040c,
+  color-bg-secondary: #0d1117,
+  color-bg-secondary-hover: #21262d,
+
+  color-on-bg-primary: #ffffff,
+  color-on-bg-primary-hover: #6e7681,
+
+  color-on-bg-secondary: #ffffff,
+  color-on-bg-secondary-hover: #6e7681,
 
   color-primary: #28abf2,
   color-primary-hover: #1c73a1,

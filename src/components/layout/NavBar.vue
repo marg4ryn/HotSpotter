@@ -26,8 +26,8 @@
 <style scoped lang="scss">
   .nav-bar {
     width: 100%;
-    background-color: var(--color-bg-secondary);
-    color: #fff;
+    background-color: var(--color-bg-primary);
+    color: var(--color-on-bg-primary);
     display: flex;
     align-items: center;
     padding: 0 20px;
