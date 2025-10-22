@@ -80,7 +80,7 @@ Here's an overview of the project's directory structure:
     -   `layout/`: Components responsible for the overall page layout (e.g., header, footer, sidebar navigation).
 -   **`locales/`**: Stores translation files for different languages.
 -   **`router/`**: Vue Router configuration.
--   **`styles/`**: SCSS files.
 -   **`services/`**: Files containing business logic and communication with external APIs.
 -   **`stores/`**: Pinia modules for global state management.
+-   **`styles/`**: SCSS files.
 -   **`views/`**: Components representing entire pages/views of the application.

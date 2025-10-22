@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="footer-left">2025 {{ t('appname') }}</div>
+    <div class="footer-left">2025 {{ t('application.name') }}</div>
     <div class="footer-right">
       <a href="/about">{{ t('footer.about') }}</a>
       <a href="/attributes">{{ t('footer.attributes') }}</a>
@@ -22,6 +22,7 @@
     background-color: var(--color-bg-secondary);
     color: var(--color-on-bg-secondary);
     font-size: 14px;
+    font-weight: 300;
 
     a {
       color: var(--color-on-bg-secondary);

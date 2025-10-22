@@ -1,37 +1,54 @@
 <template>
   <div class="nav-item-wrapper" @mouseenter="hover = true" @mouseleave="hover = false">
-    <!-- Główny link -->
-    <RouterLink :to="to" class="nav-item" :class="{ 'nav-item--active': active }">
+    <component
+      :is="submenu && submenu.length && !to ? 'div' : RouterLink"
+      class="nav-item"
+      :class="{ 'nav-item--active': isActive }"
+      v-bind="to ? { to } : {}"
+    >
       <img v-if="icon" :src="icon" class="nav-item__icon" alt="" />
       <span class="nav-item__text">{{ label }}</span>
-    </RouterLink>
+    </component>
 
-    <!-- Podmenu -->
-    <ul v-if="submenu && submenu.length" class="submenu" :class="{ 'submenu--visible': hover }">
-      <li v-for="item in submenu" :key="item.label">
-        <RouterLink :to="item.to">{{ item.label }}</RouterLink>
-      </li>
-    </ul>
+    <Transition name="submenu-fade-slide">
+      <ul v-if="submenu && submenu.length && hover" class="submenu">
+        <li v-for="item in submenu" :key="item.label">
+          <RouterLink :to="item.to" @click="hideSubmenu">{{ item.label }}</RouterLink>
+        </li>
+      </ul>
+    </Transition>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue'
+  import { ref, computed } from 'vue'
+  import { RouterLink, useRoute } from 'vue-router'
 
   interface SubmenuItem {
     label: string
     to: string
+    active?: boolean
   }
 
-  defineProps<{
+  const props = defineProps<{
     label: string
     icon?: string
-    to: string
-    active: boolean
+    to?: string
+    active?: boolean
     submenu?: SubmenuItem[]
   }>()
 
+  const route = useRoute()
   const hover = ref(false)
+  const isActive = computed(() => {
+    if (props.active) return true
+    if (props.to && route.path === props.to) return true
+    if (props.submenu?.some((item) => route.path === item.to)) return true
+    return false
+  })
+  const hideSubmenu = () => {
+    hover.value = false
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -50,18 +67,25 @@
       text-decoration: none;
       font-size: 16px;
       font-weight: 400;
-      min-width: 200px;
+      min-width: 210px;
       max-width: 250px;
+      transition:
+        background 0.3s ease,
+        font-weight 0.3s ease;
+
+      &[is='div'],
+      &[is='span'] {
+        pointer-events: auto;
+      }
 
       &:hover {
         background: linear-gradient(
           to right,
-          color-mix(in srgb, var(--color-primary) 50%, transparent) 0%,
+          color-mix(in srgb, var(--color-primary) 20%, transparent) 0%,
           transparent 30%,
           transparent 70%,
-          color-mix(in srgb, var(--color-primary) 50%, transparent) 100%
+          color-mix(in srgb, var(--color-primary) 20%, transparent) 100%
         );
-        font-weight: 600;
       }
 
       &__icon {
@@ -93,31 +117,78 @@
       margin: 0;
       padding: 5px 0;
       list-style: none;
-      background-color: var(--color-bg);
+      background-color: var(--color-bg-primary);
       border-radius: 8px;
-      min-width: 180px;
+      min-width: 210px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s ease;
+      z-index: 100;
+      overflow: hidden;
 
       li {
-        padding: 8px 16px;
+        padding: 4px 10px;
 
         a {
           color: var(--color-on-bg-primary);
           text-decoration: none;
+          display: block;
+          padding: 4px 6px;
+          border-radius: 6px;
+          position: relative;
+          transition:
+            background 0.3s ease,
+            color 0.3s ease,
+            font-weight 0.3s ease;
 
           &:hover {
+            background: linear-gradient(
+              to right,
+              color-mix(in srgb, var(--color-primary) 20%, transparent) 0%,
+              transparent 30%,
+              transparent 70%,
+              color-mix(in srgb, var(--color-primary) 20%, transparent) 100%
+            );
+          }
+
+          &.router-link-active,
+          &.router-link-exact-active {
+            font-weight: 600;
             color: var(--color-primary);
+            &::after {
+              content: '';
+              position: absolute;
+              right: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 3px;
+              height: 80%;
+              background-color: var(--color-primary);
+              border-radius: 1.5px;
+            }
           }
         }
       }
+    }
 
-      &--visible {
-        opacity: 1;
-        pointer-events: auto;
-      }
+    .submenu-fade-slide-enter-active,
+    .submenu-fade-slide-leave-active {
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        max-height 0.3s ease;
+    }
+
+    .submenu-fade-slide-enter-from,
+    .submenu-fade-slide-leave-to {
+      opacity: 0;
+      max-height: 0;
+      transform: translateY(-10px);
+    }
+
+    .submenu-fade-slide-enter-to,
+    .submenu-fade-slide-leave-from {
+      opacity: 1;
+      max-height: 200px;
+      transform: translateY(0);
     }
   }
 </style>
