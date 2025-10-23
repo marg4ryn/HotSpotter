@@ -1,0 +1,67 @@
+{
+  "footer": {
+    "about": "About",
+    "attributions": "Attributions",
+    "aria": {
+      "about": "About page",
+      "attributions": "Attributions page"
+    }
+  },
+
+  "appbar": {
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "user-profile": "User Profile",
+    "new-analysis": "New Analysis"
+  },
+
+  "title": {
+    "time-range": "Time Range",
+    "settings": "Settings",
+    "about": "About",
+    "attributions": "Attributions",
+    "change-coupling": "Change Coupling",
+    "system-overview": "System Overview",
+    "technical-sprawl": "Technical Sprawl",
+    "hotspots": "Hotspots",
+    "complexity-trends": "Complexity Trends",
+    "code-age": "Code Age",
+    "developer-view": "Developer View",
+    "team-view": "Team View",
+    "abandoned-code": "Abandoned Code",
+    "responsibility-diffusion": "Responsibility Diffusion",
+    "developer-relationships": "Relationships",
+    "developer-mapping": "Developers",
+    "team-mapping": "Teams",
+    "folder-mapping": "Folders",
+    "former-developers-mapping": "Former Developers",
+    "ignored-files-mapping": "Ignored Files",
+    "ignored-folders-mapping": "Ignored Folders"
+  },
+
+  "navbar": {
+    "summary": "Summary",
+    "code-health": "Code Health",
+    "change-coupling": "Change Coupling",
+    "developers": "Developers",
+    "mappings": "Mappings",
+    "system-overview": "System Overview",
+    "technical-sprawl": "Technical Sprawl",
+    "hotspots": "Hotspots",
+    "complexity-trends": "Complexity Trends",
+    "code-age": "Code Age",
+    "developer-view": "Developer View",
+    "team-view": "Team View",
+    "abandoned-code": "Abandoned Code",
+    "responsibility-diffusion": "Responsibility Diffusion",
+    "developer-relationships": "Relationships",
+    "developer-mapping": "Developers",
+    "team-mapping": "Teams",
+    "folder-mapping": "Folders",
+    "former-developers-mapping": "Former Developers",
+    "ignored-files-mapping": "Ignored Files",
+    "ignored-folders-mapping": "Ignored Folders"
+  },
+
+  "inDevelopmentLabel.text": "In Development"
+}

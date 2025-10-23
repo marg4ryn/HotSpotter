@@ -1,0 +1,38 @@
+:root {
+  font-family: $font-family-base;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: var(--color-on-bg-secondary);
+  background-color: var(--color-bg-secondary);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  @include export-theme($theme-dark);
+}
+
+[data-theme='light'] {
+  @include export-theme($theme-light);
+}
