@@ -1,15 +1,23 @@
 <template>
   <footer class="footer">
     <div class="footer-left">2025 {{ t('application.name') }}</div>
+
     <div class="footer-right">
-      <a href="/about">{{ t('footer.about') }}</a>
-      <a href="/attributes">{{ t('footer.attributes') }}</a>
+      <RouterLink to="/about" class="footer-btn" aria-label="{{ t('application.name') }}">
+        {{ t('footer.about') }}
+      </RouterLink>
+
+      <RouterLink to="/attributes" class="footer-btn" aria-label="Attributes page">
+        {{ t('footer.attributes') }}
+      </RouterLink>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
   import { useI18n } from 'vue-i18n'
+  import { RouterLink } from 'vue-router'
+
   const { t } = useI18n()
 </script>
 
@@ -24,14 +32,26 @@
     font-size: 14px;
     font-weight: 300;
 
-    a {
+    .footer-right {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-btn {
       color: var(--color-on-bg-secondary);
       text-decoration: none;
-      margin-left: 15px;
-      transition: color 0.2s;
+      transition:
+        color 0.25s ease,
+        transform 0.2s ease;
 
       &:hover {
         color: var(--color-primary);
+        transform: scale(1.1);
+      }
+
+      &:active {
+        color: var(--color-primary);
+        font-weight: 400;
       }
     }
   }
