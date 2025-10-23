@@ -1,14 +1,14 @@
 <template>
   <footer class="footer">
-    <div class="footer-left">2025 {{ t('application.name') }}</div>
+    <div class="footer-left">2025 HotSpotter</div>
 
     <div class="footer-right">
-      <RouterLink to="/about" class="footer-btn" aria-label="{{ t('application.name') }}">
+      <RouterLink to="/about" class="footer-btn" :aria-label="t('footer.aria.about')">
         {{ t('footer.about') }}
       </RouterLink>
 
-      <RouterLink to="/attributes" class="footer-btn" aria-label="Attributes page">
-        {{ t('footer.attributes') }}
+      <RouterLink to="/attributions" class="footer-btn" :aria-label="t('footer.aria.attributions')">
+        {{ t('footer.attributions') }}
       </RouterLink>
     </div>
   </footer>
@@ -49,7 +49,7 @@
         transform: scale(1.1);
       }
 
-      &:active {
+      &.router-link-active {
         color: var(--color-primary);
         font-weight: 400;
       }

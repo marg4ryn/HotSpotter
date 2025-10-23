@@ -66,7 +66,6 @@
       color: var(--color-on-bg-primary);
       text-decoration: none;
       font-size: 16px;
-      font-weight: 400;
       min-width: 210px;
       max-width: 250px;
       transition:
