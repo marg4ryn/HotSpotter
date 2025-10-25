@@ -1,12 +1,12 @@
 <script setup lang="ts">
   import { computed } from 'vue'
   import { useUIStore } from '@/stores/uiStore'
+  import { RouterView } from 'vue-router'
 
   import AppBar from '@/components/layout/AppBar.vue'
   import NavBar from '@/components/layout/NavBar.vue'
   import AppFooter from '@/components/layout/AppFooter.vue'
   import MeshGradient from '@/components/layout/MeshGradient.vue'
-  import WelcomeView from './views/WelcomeView.vue'
 
   const uiStore = useUIStore()
   const isNavBarVisible = computed(() => uiStore.isNavBarVisible)
@@ -24,7 +24,7 @@
     <AppBar />
     <NavBar v-if="isNavBarVisible" />
     <div class="content" :style="{ minHeight: contentMinHeight }">
-      <WelcomeView />
+      <RouterView />
     </div>
     <AppFooter />
   </div>
