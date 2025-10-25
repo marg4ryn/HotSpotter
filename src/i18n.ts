@@ -1,5 +1,6 @@
 import { createI18n } from 'vue-i18n'
 import en from './locales/en.json'
+import pl from './locales/pl.json'
 
 const userLocale = navigator.language.split('-')[0]
 
@@ -9,5 +10,6 @@ export const i18n = createI18n({
   fallbackLocale: 'en',
   messages: {
     en,
+    pl,
   },
 })

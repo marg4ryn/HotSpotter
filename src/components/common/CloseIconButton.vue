@@ -1,5 +1,10 @@
 <template>
-  <button class="icon-button" @click="handleBack">
+  <button
+    class="icon-button"
+    @click="handleBack"
+    :title="t('others.closeIconButton')"
+    :aria-label="t('others.closeIconButton')"
+  >
     <svg
       width="24"
       height="24"
@@ -18,7 +23,9 @@
 
 <script setup lang="ts">
   import { useRouter } from 'vue-router'
+  import { useI18n } from 'vue-i18n'
 
+  const { t } = useI18n()
   const router = useRouter()
 
   const handleBack = () => {

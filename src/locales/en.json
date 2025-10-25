@@ -1,20 +1,4 @@
 {
-  "footer": {
-    "about": "About",
-    "attributions": "Attributions",
-    "aria": {
-      "about": "About page",
-      "attributions": "Attributions page"
-    }
-  },
-
-  "appbar": {
-    "settings": "Settings",
-    "notifications": "Notifications",
-    "user-profile": "User Profile",
-    "new-analysis": "New Analysis"
-  },
-
   "title": {
     "time-range": "Time Range",
     "settings": "Settings",
@@ -37,6 +21,13 @@
     "former-developers-mapping": "Former Developers",
     "ignored-files-mapping": "Ignored Files",
     "ignored-folders-mapping": "Ignored Folders"
+  },
+
+  "appbar": {
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "user-profile": "User Profile",
+    "new-analysis": "New Analysis"
   },
 
   "navbar": {
@@ -63,5 +54,36 @@
     "ignored-folders-mapping": "Ignored Folders"
   },
 
-  "inDevelopmentLabel.text": "In Development"
+  "settingsPage": {
+    "header": "SETTINGS",
+    "appearance": "Appearance",
+    "mainColor": "Main color",
+    "red": "Red",
+    "blue": "Blue",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "language": "Language",
+    "systemDefault": "System default",
+    "english": "English",
+    "polish": "Polski",
+    "definitions": "Definitions",
+    "performance": "Performance",
+    "notifications": "Notifications"
+  },
+
+  "others": {
+    "inDevelopmentLabel": "In Development",
+    "closeIconButton": "Close"
+  },
+
+  "footer": {
+    "about": "About",
+    "attributions": "Attributions",
+    "aria": {
+      "about": "About page",
+      "attributions": "Attributions page"
+    }
+  }
 }

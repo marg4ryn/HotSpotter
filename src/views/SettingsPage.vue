@@ -1,41 +1,46 @@
 <template>
   <CloseIconButton />
-  <PageHeader label="SETTINGS" />
+  <PageHeader :label="t('settingsPage.header')" />
   <div class="content">
     <CollapsibleGroup
       :items="[
-        { label: 'Appearance', slotName: 'first' },
-        { label: 'Definitions', slotName: 'second' },
-        { label: 'Performance', slotName: 'third' },
-        { label: 'Notifications', slotName: 'fourth' },
+        { label: t('settingsPage.appearance'), slotName: 'first' },
+        { label: t('settingsPage.definitions'), slotName: 'second' },
+        { label: t('settingsPage.performance'), slotName: 'third' },
+        { label: t('settingsPage.notifications'), slotName: 'fourth' },
       ]"
     >
       <template #first>
-        <SectionHeader label="Main color" />
+        <SectionHeader :label="t('settingsPage.mainColor')" />
         <RadioButtonGroup
           v-model="useUserSettingsStore().selectedColor"
           name="color"
           :options="colors"
         />
-        <SectionHeader label="Theme" />
+        <SectionHeader :label="t('settingsPage.theme')" />
         <RadioButtonGroup
           v-model="useUserSettingsStore().selectedTheme"
           name="theme"
           :options="themes"
         />
-        <SectionHeader label="Language" />
+        <SectionHeader :label="t('settingsPage.language')" />
+        <DropdownSelect
+          id="language-select"
+          :options="languages"
+          v-model="useUserSettingsStore().selectedLanguage"
+        />
       </template>
 
       <template #second>
-        <p>In Development</p>
+        <p>{{ t('others.inDevelopmentLabel') }}</p>
       </template>
 
       <template #third>
-        <p>In Development</p>
+        <p>{{ t('others.inDevelopmentLabel') }}</p>
       </template>
 
       <template #fourth>
-        <p>In Development</p>
+        <p>{{ t('others.inDevelopmentLabel') }}</p>
       </template>
     </CollapsibleGroup>
   </div>
@@ -43,20 +48,31 @@
 
 <script setup lang="ts">
   import { useUserSettingsStore } from '@/stores/userSettingsStore'
+  import { useI18n } from 'vue-i18n'
+
   import CloseIconButton from '@/components/common/CloseIconButton.vue'
   import PageHeader from '@/components/common/PageHeader.vue'
   import CollapsibleGroup from '@/components/common/CollapsibleGroup.vue'
   import RadioButtonGroup from '@/components/common/RadioButtonGroup.vue'
   import SectionHeader from '@/components/common/SectionHeader.vue'
+  import DropdownSelect from '@/components/common/DropdownSelect.vue'
+
+  const { t } = useI18n()
+
+  const languages = [
+    { label: t('settingsPage.systemDefault'), value: 'system' },
+    { label: t('settingsPage.english'), value: 'en' },
+    { label: t('settingsPage.polish'), value: 'pl' },
+  ]
 
   const colors = [
-    { label: 'Red', value: '#bc1922' },
-    { label: 'Blue', value: '#28abf2' },
+    { label: t('settingsPage.red'), value: '#bc1922' },
+    { label: t('settingsPage.blue'), value: '#28abf2' },
   ]
   const themes = [
-    { label: 'Dark', value: 'dark' },
-    { label: 'Light', value: 'light' },
-    { label: 'System', value: 'system' },
+    { label: t('settingsPage.dark'), value: 'dark' },
+    { label: t('settingsPage.light'), value: 'light' },
+    { label: t('settingsPage.system'), value: 'system' },
   ]
 </script>
 

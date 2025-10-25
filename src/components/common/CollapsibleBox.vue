@@ -17,9 +17,11 @@
       </svg>
     </div>
 
-    <div v-show="!isCollapsed" class="collapsible-content">
-      <slot></slot>
-    </div>
+    <transition name="collapse" @enter="enter" @leave="leave">
+      <div v-if="!isCollapsed" class="collapsible-content">
+        <slot></slot>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -35,8 +37,35 @@
     (e: 'toggle'): void
   }>()
 
-  const handleClick = () => {
-    emit('toggle')
+  const handleClick = () => emit('toggle')
+
+  function enter(el: Element, done: () => void) {
+    const element = el as HTMLElement
+    element.style.height = '0'
+    element.style.opacity = '0'
+    const height = element.scrollHeight
+
+    requestAnimationFrame(() => {
+      element.style.transition = 'height 0.3s ease, opacity 0.3s ease'
+      element.style.height = height + 'px'
+      element.style.opacity = '1'
+    })
+
+    element.addEventListener('transitionend', () => done(), { once: true })
+  }
+
+  function leave(el: Element, done: () => void) {
+    const element = el as HTMLElement
+    element.style.height = element.scrollHeight + 'px'
+    element.style.opacity = '1'
+
+    requestAnimationFrame(() => {
+      element.style.transition = 'height 0.3s ease, opacity 0.3s ease'
+      element.style.height = '0'
+      element.style.opacity = '0'
+    })
+
+    element.addEventListener('transitionend', () => done(), { once: true })
   }
 </script>
 
@@ -84,5 +113,6 @@
 
   .collapsible-content {
     padding: 16px;
+    overflow: hidden;
   }
 </style>
