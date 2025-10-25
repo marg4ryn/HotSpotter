@@ -137,7 +137,8 @@
         color 0.25s ease,
         transform 0.2s ease;
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: var(--color-primary);
         transform: scale(1.2);
       }

@@ -2,30 +2,30 @@ import { createRouter, createWebHistory, Router } from 'vue-router'
 import { i18n } from '@/i18n'
 import { useUIStore } from '@/stores/uiStore'
 
-const Welcome = () => import('@/views/WelcomeView.vue')
-const TimeRange = () => import('@/views/TimeRangeView.vue')
-const Settings = () => import('@/views/SettingsView.vue')
-const About = () => import('@/views/AboutView.vue')
-const Attributions = () => import('@/views/AttributionsView.vue')
+const Welcome = () => import('@/views/WelcomePage.vue')
+const TimeRange = () => import('@/views/TimeRangePage.vue')
+const Settings = () => import('@/views/SettingsPage.vue')
+const About = () => import('@/views/AboutPage.vue')
+const Attributions = () => import('@/views/AttributionsPage.vue')
 
-const SystemOverview = () => import('@/views/SystemOverviewView.vue')
-const TechnicalSprawl = () => import('@/views/TechnicalSprawlView.vue')
-const Hotspots = () => import('@/views/HotspotsView.vue')
-const ComplexityTrends = () => import('@/views/ComplexityTrendsView.vue')
-const CodeAge = () => import('@/views/CodeAgeView.vue')
-const ChangeCoupling = () => import('@/views/ChangeCouplingView.vue')
-const DeveloperView = () => import('@/views/DeveloperViewView.vue')
-const TeamView = () => import('@/views/TeamViewView.vue')
-const AbandonedCode = () => import('@/views/AbandonedCodeView.vue')
-const ResponsibilityDiffusion = () => import('@/views/ResponsibilityDiffusionView.vue')
-const DeveloperRelationships = () => import('@/views/DeveloperRelationshipsView.vue')
+const SystemOverview = () => import('@/views/SystemOverviewPage.vue')
+const TechnicalSprawl = () => import('@/views/TechnicalSprawlPage.vue')
+const Hotspots = () => import('@/views/HotspotsPage.vue')
+const ComplexityTrends = () => import('@/views/ComplexityTrendsPage.vue')
+const CodeAge = () => import('@/views/CodeAgePage.vue')
+const ChangeCoupling = () => import('@/views/ChangeCouplingPage.vue')
+const DeveloperView = () => import('@/views/DeveloperViewPage.vue')
+const TeamView = () => import('@/views/TeamViewPage.vue')
+const AbandonedCode = () => import('@/views/AbandonedCodePage.vue')
+const ResponsibilityDiffusion = () => import('@/views/ResponsibilityDiffusionPage.vue')
+const DeveloperRelationships = () => import('@/views/DeveloperRelationshipsPage.vue')
 
-const DeveloperMapping = () => import('@/views/DeveloperMappingView.vue')
-const TeamMapping = () => import('@/views/TeamMappingView.vue')
-const FolderMapping = () => import('@/views/FolderMappingView.vue')
-const FormerDevsMapping = () => import('@/views/FormerDevsMappingView.vue')
-const IgnoredFilesMapping = () => import('@/views/IgnoredFilesMappingView.vue')
-const IgnoredFoldersMapping = () => import('@/views/IgnoredFoldersMappingView.vue')
+const DeveloperMapping = () => import('@/views/DeveloperMappingPage.vue')
+const TeamMapping = () => import('@/views/TeamMappingPage.vue')
+const FolderMapping = () => import('@/views/FolderMappingPage.vue')
+const FormerDevsMapping = () => import('@/views/FormerDevsMappingPage.vue')
+const IgnoredFilesMapping = () => import('@/views/IgnoredFilesMappingPage.vue')
+const IgnoredFoldersMapping = () => import('@/views/IgnoredFoldersMappingPage.vue')
 
 export default function (): Router {
   const { t } = i18n.global
@@ -53,7 +53,7 @@ export default function (): Router {
       name: 'settings',
       meta: {
         title: t('title.settings'),
-        showNavBar: true,
+        showNavBar: false,
       },
       component: Settings,
     },

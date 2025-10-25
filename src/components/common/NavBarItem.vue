@@ -5,13 +5,14 @@
       class="nav-item"
       :class="{ 'nav-item--active': isActive }"
       v-bind="to ? { to } : {}"
+      :tabindex="!to && submenu && submenu.length ? 0 : undefined"
     >
       <img v-if="icon" :src="icon" class="nav-item__icon" alt="" />
       <span class="nav-item__text">{{ label }}</span>
     </component>
 
     <Transition name="submenu-fade-slide">
-      <ul v-if="submenu && submenu.length && hover" class="submenu">
+      <ul v-show="submenu && submenu.length && hover" class="submenu">
         <li v-for="item in submenu" :key="item.label">
           <RouterLink :to="item.to" @click="hideSubmenu">{{ item.label }}</RouterLink>
         </li>
@@ -40,6 +41,7 @@
 
   const route = useRoute()
   const hover = ref(false)
+
   const isActive = computed(() => {
     if (props.active) return true
     if (props.to && route.path === props.to) return true
@@ -77,7 +79,8 @@
         pointer-events: auto;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         background: linear-gradient(
           to right,
           color-mix(in srgb, var(--color-primary) 20%, transparent) 0%,
@@ -138,7 +141,8 @@
             color 0.3s ease,
             font-weight 0.3s ease;
 
-          &:hover {
+          &:hover,
+          &:focus {
             background: linear-gradient(
               to right,
               color-mix(in srgb, var(--color-primary) 20%, transparent) 0%,

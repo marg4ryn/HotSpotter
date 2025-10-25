@@ -29,6 +29,10 @@ body,
   flex-direction: column;
 }
 
+input[type='radio'] {
+  accent-color: var(--color-primary);
+}
+
 :root {
   @include export-theme($theme-dark);
 }

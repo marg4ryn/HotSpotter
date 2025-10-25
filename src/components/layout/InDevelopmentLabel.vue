@@ -14,5 +14,7 @@
     @include flex-center;
     font-weight: 300;
     font-size: 22px;
+    width: 100%;
+    height: 100%;
   }
 </style>
